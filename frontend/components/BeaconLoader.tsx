@@ -78,14 +78,14 @@ export default function BeaconLoader() {
                   zone[0] +
                     (Math.random() -
                       0.5) *
-                      18,
+                      100,
 
                   5.3,
 
                   zone[1] +
                     (Math.random() -
                       0.5) *
-                      18,
+                      100,
                 ],
 
                 answers:

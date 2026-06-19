@@ -80,12 +80,12 @@ export default function CreateBeaconModal() {
         number
       ] = [
         zone[0] +
-          (Math.random() - 0.5) * 18,
+          (Math.random() - 0.5) * 100,
 
         5.3,
 
         zone[1] +
-          (Math.random() - 0.5) * 18,
+          (Math.random() - 0.5) * 100,
       ];
 
       const newBeacon = {

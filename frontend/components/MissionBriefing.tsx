@@ -118,20 +118,20 @@ export default function MissionBriefing() {
               opacity: 0.85,
             }}
           >
-            🖥️ Use "W" "A" "S" "D" From Your Keyboard → Locomotion
+             Use "W" "A" "S" "D" From Your Keyboard → Locomotion
 
             <br />
 
-            ⚡ SHIFT → Boost
+             SHIFT → Boost
 
 
             <br />
 
-            🪐 Land near worlds to interact
+            Land near worlds to interact
 
             <br />
 
-            📱 Mobile → Just drag to move
+            Mobile → Just drag to move
           </div>
         </div>
 
@@ -165,14 +165,14 @@ export default function MissionBriefing() {
               lineHeight: 1.8,
             }}
           >
-            <div>🤖 AI</div>
-            <div>🚀 Career</div>
-            <div>🔬 Research</div>
-            <div>💡 Startup</div>
-            <div>💻 Coding</div>
-            <div>🔐 Cyber</div>
-            <div>🎨 Design</div>
-            <div>🌎 General</div>
+            <div>🤖 - AI</div>
+            <div>🚀 - Career</div>
+            <div>🔬 - Research</div>
+            <div>💡 - Startup</div>
+            <div>💻 - Coding</div>
+            <div>🔐 - Cyber</div>
+            <div>🎨 - Design</div>
+            <div>🌎 - General</div>
           </div>
         </div>
 
