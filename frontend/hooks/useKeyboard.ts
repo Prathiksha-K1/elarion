@@ -13,6 +13,8 @@ export default function useKeyboard() {
   });
 
   useEffect(() => {
+      document.body.tabIndex = 0;
+      document.body.focus();
     console.log("Keyboard Hook Mounted");
 
     const isTyping = () => {
