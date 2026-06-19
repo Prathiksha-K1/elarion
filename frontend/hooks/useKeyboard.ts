@@ -13,9 +13,10 @@ export default function useKeyboard() {
   });
 
   useEffect(() => {
+    console.log("Keyboard Hook Mounted");
+
     const isTyping = () => {
-      const active =
-        document.activeElement;
+      const active = document.activeElement;
 
       return (
         active instanceof HTMLInputElement ||
@@ -26,7 +27,12 @@ export default function useKeyboard() {
     const handleKeyDown = (
       e: KeyboardEvent
     ) => {
-      if (isTyping()) return;
+      console.log("KEY DOWN:", e.key);
+
+      if (isTyping()) {
+        console.log("Typing detected");
+        return;
+      }
 
       const key =
         e.key.toLowerCase();
@@ -40,6 +46,8 @@ export default function useKeyboard() {
     const handleKeyUp = (
       e: KeyboardEvent
     ) => {
+      console.log("KEY UP:", e.key);
+
       const key =
         e.key.toLowerCase();
 
