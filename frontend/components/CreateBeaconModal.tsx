@@ -146,8 +146,8 @@ export default function CreateBeaconModal() {
           typeof window !==
             "undefined" &&
           window.innerWidth < 768
-            ? 300
-            : 380,
+            ? 250
+            : 310,
 
         background:
           "rgba(15,23,42,0.92)",
@@ -160,7 +160,7 @@ export default function CreateBeaconModal() {
 
         borderRadius: 24,
 
-        padding: 22,
+        padding: 16,
 
         color: "white",
 
@@ -304,13 +304,13 @@ export default function CreateBeaconModal() {
           )
         }
         placeholder="Example: What is the fastest way to become a GenAI Engineer?"
-        rows={5}
+        rows={3}
         style={{
           width: "100%",
 
           padding: 14,
 
-          borderRadius: 14,
+          borderRadius: 10,
 
           border:
             "1px solid rgba(255,255,255,0.08)",
