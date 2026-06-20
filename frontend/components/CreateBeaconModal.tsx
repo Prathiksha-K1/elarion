@@ -146,8 +146,8 @@ export default function CreateBeaconModal() {
           typeof window !==
             "undefined" &&
           window.innerWidth < 768
-            ? 250
-            : 310,
+            ? 260
+            : 360,
 
         background:
           "rgba(15,23,42,0.92)",
@@ -190,7 +190,9 @@ export default function CreateBeaconModal() {
 
           marginBottom: 6,
 
-          fontSize: 24,
+          fontSize: 18,
+         fontWeight: 700,
+         lineHeight: 1.3,
         }}
       >
         Create A Knowledge World
@@ -198,11 +200,10 @@ export default function CreateBeaconModal() {
 
       <div
         style={{
-          fontSize: 13,
-
-          opacity: 0.65,
-
-          marginBottom: 18,
+          fontSize: 12,
+         opacity: 0.55,
+         marginBottom: 14,
+         lineHeight: 1.5,
         }}
       >
         Launch a signal into the galaxy
@@ -231,23 +232,16 @@ export default function CreateBeaconModal() {
           )
         }
         style={{
-          width: "100%",
-
-          padding: 14,
-
-          marginBottom: 14,
-
-          borderRadius: 14,
-
-          border:
-            "1px solid rgba(255,255,255,0.08)",
-
-          background: "#1e293b",
-
-          color: "#ffffff",
-
-          outline: "none",
-        }}
+  width: "100%",
+  padding: 12,
+  boxSizing: "border-box",
+  borderRadius: 10,
+  border: "1px solid rgba(255,255,255,0.08)",
+  resize: "none",
+  background: "rgba(255,255,255,0.06)",
+  color: "white",
+  outline: "none",
+}}
       >
         <option value="ai">
           AI
@@ -306,24 +300,16 @@ export default function CreateBeaconModal() {
         placeholder="Example: What is the fastest way to become a GenAI Engineer?"
         rows={3}
         style={{
-          width: "100%",
-
-          padding: 14,
-
-          borderRadius: 10,
-
-          border:
-            "1px solid rgba(255,255,255,0.08)",
-
-          resize: "none",
-
-          background:
-            "rgba(255,255,255,0.06)",
-
-          color: "white",
-
-          outline: "none",
-        }}
+  width: "100%",
+  padding: 12,
+  boxSizing: "border-box",
+  borderRadius: 10,
+  border: "1px solid rgba(255,255,255,0.08)",
+  resize: "none",
+  background: "rgba(255,255,255,0.06)",
+  color: "white",
+  outline: "none",
+}}
       />
 
       <button
