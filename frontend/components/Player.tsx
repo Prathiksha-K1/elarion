@@ -38,82 +38,81 @@ export default function Player() {
   useFrame((state) => {
     let [x, y, z] = position;
 
-    const speed = keys.shift
-      ? 0.55
-      : 0.32;
+      const speed = keys.shift
+  ? 1.2
+  : 0.7;
 
-    let nextX = x;
-    let nextZ = z;
+let nextX = x;
+let nextZ = z;
 
-    let moving = false;
+let moving = false;
 
-    if (keys.w) {
-      nextZ -= speed;
-      moving = true;
-    }
+let moveX = 0;
+let moveZ = 0;
 
-    if (keys.s) {
-      nextZ += speed;
-      moving = true;
-    }
+if (keys.w) {
+  moveZ -= 1;
+  moving = true;
+}
 
-    if (keys.a) {
-      nextX -= speed;
-      moving = true;
-    }
+if (keys.s) {
+  moveZ += 1;
+  moving = true;
+}
 
-    if (keys.d) {
-      nextX += speed;
-      moving = true;
-    }
+if (keys.a) {
+  moveX -= 1;
+  moving = true;
+}
 
-    y = 5.3;
+if (keys.d) {
+  moveX += 1;
+  moving = true;
+}
 
-    let blocked = false;
+if (moveX !== 0 || moveZ !== 0) {
+  const length = Math.sqrt(
+    moveX * moveX +
+      moveZ * moveZ
+  );
 
-    for (const beacon of beacons) {
-      const [bx, , bz] =
-        beacon.position;
+  moveX /= length;
+  moveZ /= length;
 
-      const dx = nextX - bx;
-      const dz = nextZ - bz;
+  nextX += moveX * speed;
+  nextZ += moveZ * speed;
+}
 
-      const distance =
-        Math.sqrt(
-          dx * dx +
-            dz * dz
-        );
+y = 5.3;
 
-      if (distance < 1.8) {
-        blocked = true;
+let blocked = false;
 
-        const angle =
-          Math.atan2(
-            dz,
-            dx
-          );
+for (const beacon of beacons) {
+  const [bx, , bz] =
+    beacon.position;
 
-        nextX =
-          bx +
-          Math.cos(angle) *
-            1.9;
+  const dx = nextX - bx;
+  const dz = nextZ - bz;
 
-        nextZ =
-          bz +
-          Math.sin(angle) *
-            1.9;
+  const distance =
+    Math.sqrt(
+      dx * dx +
+        dz * dz
+    );
 
-        break;
-      }
-    }
+  if (distance < 1.5) {
+    blocked = true;
+    break;
+  }
+}
 
-    if (moving || blocked) {
-      setPosition([
-        nextX,
-        y,
-        nextZ,
-      ]);
-    }
+if (!blocked) {
+  setPosition([
+    nextX,
+    y,
+    nextZ,
+  ]);
+}
 
     if (ref.current) {
       ref.current.position.set(
