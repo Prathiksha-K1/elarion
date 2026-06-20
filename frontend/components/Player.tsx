@@ -106,7 +106,7 @@ for (const beacon of beacons) {
   }
 }
 
-if (!blocked) {
+if (moving && !blocked) {
   setPosition([
     nextX,
     y,
