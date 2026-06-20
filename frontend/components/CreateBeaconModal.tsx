@@ -224,93 +224,105 @@ export default function CreateBeaconModal() {
         Category
       </label>
 
-      <select
-        value={category}
-        onChange={(e) =>
-          setCategory(
-            e.target.value
-          )
-        }
-        style={{
-  width: "100%",
-  padding: 12,
-  boxSizing: "border-box",
-  borderRadius: 10,
-  border: "1px solid rgba(255,255,255,0.08)",
-  resize: "none",
-  background: "rgba(255,255,255,0.06)",
-  color: "white",
-  outline: "none",
-}}
-      >
-        <option value="ai">
-          AI
-        </option>
+     <select
+  value={category}
+  onChange={(e) =>
+    setCategory(e.target.value)
+  }
+  style={{
+    width: "100%",
+    padding: 12,
+    boxSizing: "border-box",
+    borderRadius: 10,
+    border:
+      "1px solid rgba(255,255,255,0.08)",
+    background:
+      "rgba(255,255,255,0.06)",
+    color: "white",
+    outline: "none",
+    marginBottom: 14,
+  }}
+>
+  <option
+    value="ai"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    }}
+  >
+    AI
+  </option>
 
-        <option value="career">
-          Career
-        </option>
+  <option
+    value="career"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    }}
+  >
+    Career
+  </option>
 
-        <option value="research">
-          Research
-        </option>
+  <option
+    value="research"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    }}
+  >
+    Research
+  </option>
 
-        <option value="startup">
-          Startup
-        </option>
+  <option
+    value="startup"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    }}
+  >
+    Startup
+  </option>
 
-        <option value="coding">
-          Coding
-        </option>
+  <option
+    value="coding"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    }}
+  >
+    Coding
+  </option>
 
-        <option value="cybersecurity">
-          Cybersecurity
-        </option>
+  <option
+    value="cybersecurity"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    }}
+  >
+    Cybersecurity
+  </option>
 
-        <option value="design">
-          Design
-        </option>
+  <option
+    value="design"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    }}
+  >
+    Design
+  </option>
 
-        <option value="general">
-          General
-        </option>
-      </select>
-
-      <label
-        style={{
-          display: "block",
-
-          marginBottom: 8,
-
-          fontSize: 12,
-
-          opacity: 0.7,
-        }}
-      >
-        Question / Topic
-      </label>
-
-      <textarea
-        value={text}
-        onChange={(e) =>
-          setText(
-            e.target.value
-          )
-        }
-        placeholder="Example: What is the fastest way to become a GenAI Engineer?"
-        rows={3}
-        style={{
-  width: "100%",
-  padding: 12,
-  boxSizing: "border-box",
-  borderRadius: 10,
-  border: "1px solid rgba(255,255,255,0.08)",
-  resize: "none",
-  background: "rgba(255,255,255,0.06)",
-  color: "white",
-  outline: "none",
-}}
-      />
+  <option
+    value="general"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    }}
+  >
+    General
+  </option>
+</select>
 
       <button
         onClick={createBeacon}
