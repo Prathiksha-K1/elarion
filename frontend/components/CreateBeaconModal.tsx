@@ -323,7 +323,39 @@ export default function CreateBeaconModal() {
     General
   </option>
 </select>
+     <label
+  style={{
+    display: "block",
+    marginBottom: 8,
+    fontSize: 12,
+    opacity: 0.7,
+  }}
+>
+  Question / Topic
+</label>
 
+<textarea
+  value={text}
+  onChange={(e) =>
+    setText(e.target.value)
+  }
+  placeholder="Example: What is the fastest way to become a GenAI Engineer?"
+  rows={3}
+  style={{
+    width: "100%",
+    padding: 12,
+    boxSizing: "border-box",
+    borderRadius: 10,
+    border:
+      "1px solid rgba(255,255,255,0.08)",
+    resize: "none",
+    background:
+      "rgba(255,255,255,0.06)",
+    color: "white",
+    outline: "none",
+    marginBottom: 12,
+  }}
+/>
       <button
         onClick={createBeacon}
         style={{
