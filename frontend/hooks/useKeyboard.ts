@@ -13,29 +13,9 @@ export default function useKeyboard() {
   });
 
   useEffect(() => {
-      document.body.tabIndex = 0;
-      document.body.focus();
-    console.log("Keyboard Hook Mounted");
-
-    const isTyping = () => {
-      const active = document.activeElement;
-
-      return (
-        active instanceof HTMLInputElement ||
-        active instanceof HTMLTextAreaElement
-      );
-    };
-
     const handleKeyDown = (
       e: KeyboardEvent
     ) => {
-      console.log("KEY DOWN:", e.key);
-
-      if (isTyping()) {
-        console.log("Typing detected");
-        return;
-      }
-
       const key =
         e.key.toLowerCase();
 
@@ -48,8 +28,6 @@ export default function useKeyboard() {
     const handleKeyUp = (
       e: KeyboardEvent
     ) => {
-      console.log("KEY UP:", e.key);
-
       const key =
         e.key.toLowerCase();
 
@@ -57,17 +35,6 @@ export default function useKeyboard() {
         ...prev,
         [key]: false,
       }));
-    };
-
-    const resetKeys = () => {
-      setKeys({
-        w: false,
-        a: false,
-        s: false,
-        d: false,
-        shift: false,
-        e: false,
-      });
     };
 
     window.addEventListener(
@@ -80,11 +47,6 @@ export default function useKeyboard() {
       handleKeyUp
     );
 
-    window.addEventListener(
-      "blur",
-      resetKeys
-    );
-
     return () => {
       window.removeEventListener(
         "keydown",
@@ -94,11 +56,6 @@ export default function useKeyboard() {
       window.removeEventListener(
         "keyup",
         handleKeyUp
-      );
-
-      window.removeEventListener(
-        "blur",
-        resetKeys
       );
     };
   }, []);
